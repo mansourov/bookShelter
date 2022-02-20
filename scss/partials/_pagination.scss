@@ -1,0 +1,45 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .pageCount {
+        display: flex;
+
+        .per_page1, .per_page2, .per_page3, .per_page4{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            background: #FFFFFF;
+            border: 1px solid #DFE3E8;
+            border-radius: 4px;
+            
+            width: 32px;
+            height: 32px;
+
+            font-size: 14px;
+            line-height: 20px;
+            text-align: center;
+            color: #212B36;
+
+            margin: 0 5px;
+        }
+
+        .per_Dots {
+            font-size: 14px;
+            line-height: 20px;
+            color: #212B36;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #FFFFFF;
+            border: 1px solid #DFE3E8;
+            border-radius: 4px;
+            
+            width: 32px;
+            height: 32px;
+        }
+    }
+}

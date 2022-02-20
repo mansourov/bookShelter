@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./css/main.min.css">
+
+    <title>BookShelter</title>
+</head>
+
+<body>
+    <div class="modal fade  come-from-modal right" id="myModal" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel">
+        <div id="modal-box" class="modal-dialog" role="document">
+
+        </div>
+    </div>
+    <section class="container">
+        <!-- header -->
+        <section class="header">
+            <img src="./img/logo-index.png" alt="">
+
+            <form id="form-search" class="form">
+                <label class="form__search">
+                    <input data-search="search" class="form__search__input" id="search-input" type="text" placeholder="Search books" autocomplete="off">
+                </label>
+            </form>
+
+            <div class="header__logout">
+                <img src="./img/sun.png" alt="">
+                <a href="login.html">Logout</a>
+            </div>
+        </section>
+
+
+        <!-- results -->
+        <section class="result">
+            <span class="result__show">Showing <span class="amount__result"> 0</span> Result(s)</span>
+
+            <button data-date="new" type="button" id="sortByDate" class="result__order btn-order">Order by newest</button>
+        </section>
+
+
+        <!-- general -->
+        <section class="books">
+            <div class="books__bookmark">
+                <h2>Bookmarks</h2>
+                <p>
+                    If you don’t like to read, you haven’t found the right book
+                </p>
+
+                <!-- bookmark -->
+                <ul class="bookmark">
+
+                </ul>
+
+
+            </div>
+
+            <div class="books__block">
+                <div id="books-card" class="card">
+
+                </div>
+
+                <ul class="pagination" >
+                    <li class="page-item">
+                        <span data-task="paginationbtnPrev" class="page-link pagePrev"></span>
+                    </li>
+                    <li class="pageCount">
+                        <div class="per_page1 page-link">1</div>
+                        <div class="per_page2 page-link">2</div>
+                        <div class="per_Dots page-link">...</div>
+                        <div class="per_page3 page-link ">8</div>
+                        <div class="per_page4 page-link">9</div>
+                    </li>
+                    <li class="page-item">
+                        <span data-task="paginationbtnNext" class="page-link pageNext">></span>
+                    </li>
+                </ul>
+            </div>
+
+            
+        </section>
+
+        
+    </section>
+
+    <!-- books template -->
+    <template id="books-template">
+        <div class="card__item">
+            <img class="card__item__img" src="https://picsum.photos/id/870/200/300?grayscale&blur=2
+            " alt="">
+
+            <p class="card__item__book">Python</p>
+            <p class="card__item__author">David M. Beazley</p>
+            <p class="card__item__year">2009</p>
+
+            <div class="card__item__buttons">
+                <button type="button" class="bookmark-btn bookmark">Bookmark</button>
+                <button type="button" data-toggle="modal" data-target="#myModal" class="more-btn">More Info</button>
+                <button class="read-btn">Read</button>
+            </div>
+        </div>
+    </template>
+
+    <!-- bookmark template -->
+    <template id="book-mark">
+        <li class="bookmark__list">
+            <div>
+                <span class="bookmark__list__book">Python</span>
+                <p class="bookmark__list__author">David M. Beazley</p>
+            </div>
+            <div class="bookmark__list__div">
+                <img class="bookmark__list__img" src="./img/book-open.png" alt="">
+                <button class="bookmark__list__delete" type="submit"><img src="./img/delete.png" alt=""></button>
+            </div>
+        </li>
+    </template>
+
+    <!-- modal template -->
+    <template id="modal-template">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Python</h4>
+            </div>
+            <div class="modal-body">
+                <img class="modal-body-img" src="https://picsum.photos/id/870/200/300?grayscale&blur=2
+                    " alt="">
+
+                <p class="modal-body-text">
+                    Culpa nulla pariatur cupidatat nisi incididunt ea do ipsum. Incididunt quis mollit elit commodo
+                    cillum eiusmod reprehenderit labore irure. Cillum et incididunt et nostrud exercitation quis aute
+                    laboris non ut adipisicing. Laboris ad minim aute nulla proident deserunt velit anim sunt aliquip ut
+                    sit. Exercitation aliquip ullamco officia non aliqua. Sint deserunt aliquip veniam id eiusmod sit
+                    consectetur mollit ea aliqua officia consequat. Magna non mollit nisi est commodo voluptate aute id.
+                    Deserunt nostrud id do in nisi mollit deserunt non. Pariatur fugiat cillum irure elit sint nisi ad
+                    ipsum culpa deserunt cupidatat esse consequat laboris. Id aliquip non consectetur esse proident duis
+                    Lorem.
+                </p>
+            </div>
+
+            <div>
+                <li class="modal__block">
+                    <div class="modal__block__author">
+                        <h3 class="author">Author:</h3>
+                        <p id="author" class="name">Jamal Kasper</p>
+                        <p id="author2" class="author2">Author 2</p>
+                    </div>
+
+                    <div class="modal__block__publish">
+                        <h3 class="author">Published:</h3>
+                        <p id="published" class="name">2019</p>
+                    </div>
+
+                    <div class="modal__block__publish">
+                        <h3 class="author">Publishers:</h3>
+                        <p class="computer">Hollman</p>
+                    </div>
+
+                    <div class="modal__block__publish">
+                        <h3 class="author">Categories:</h3>
+                        <p id="categories" class="computer">Computers</p>
+                    </div>
+
+                    <div class="modal__block__publish">
+                        <h3 class="author">Pages Count:</h3>
+                        <p id="pageCount" class="page">346</p>
+                    </div>
+
+                </li>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary read-btn">Read</button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+</body>
+<script src="./js/render-books.js"></script>
+<script src="./js/check-login.js"></script>
+<script src="./js/validations.js"></script>
+<script src="./js/search.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+</html>

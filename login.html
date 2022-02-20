@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./css/main.min.css">
+
+    <title>Login</title>
+    
+</head>
+<body>
+    <div class="notifications"></div>
+    <div class="login">
+        <img class="login__logo" src="./img/logo.png" alt="">
+
+        <form class="login__form form">  
+            <label class="form__email">
+                <input class="form__email__input" type="text" placeholder="USERNAME">
+            </label>
+            
+            <label class="form__password">
+                <input class="form__password__input" type="password" placeholder="PASSWORD">
+            </label>
+
+            <button type="submit" class="form__submit">LOGIN</button>
+
+            <p class="login__form__password">Forgot password?</p>
+        </form>
+    </div>
+
+   <template id="alertTemplate">
+        <div class="alert">
+            message
+        </div>
+   </template>
+</body>
+<script src="./js/validations.js"></script>
+<script src="./js/login.js"></script>
+</html>
